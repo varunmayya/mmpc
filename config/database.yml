@@ -53,5 +53,5 @@ production:
   encoding: unicode
   database: makemypc_production
   pool: 5
-  username: makemypc
-  password:
+  username: varun
+  password: groupsite619
