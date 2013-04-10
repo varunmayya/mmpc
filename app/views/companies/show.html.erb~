@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<table class="table2">
+<p>
+  <b>Name:</b>
+  <%= @company.name %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @company.image_url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @company.description %>
+</p>
+</table>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

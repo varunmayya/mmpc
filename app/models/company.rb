@@ -1,0 +1,8 @@
+class Company < ActiveRecord::Base
+  resourcify
+  attr_accessible :description, :image_url, :name
+
+  validates :description, :name , :presence => true , :uniqueness => true
+  validates :image_url, :format => {:with => %r{\.(gif|jpg|png)$}i, :message => "Please ensure that the image extension is correct."} 
+has_many :products
+end

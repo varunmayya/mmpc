@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MakeMyPc.in - Build your own personal Desktop Computer!</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="jumbotron"> <h1>MakeMyPC.in Admin</h1> </div> 
+<div class="navbar">
+<div class="navbar-inner">
+<ul class="nav">
+
+<% if can? :manage, @product %>
+   <li><%= link_to "Product Management", products_path %></li>
+  <li><%= link_to "Company Management", companies_path %></li>
+<% end %>
+
+<%if user_signed_in? %>
+<li><%= link_to "You are signed in as #{current_user.email}, Sign out?", destroy_user_session_path, :method => 'delete' %></li>
+<% else %>
+<li><%= link_to "Sign in", new_user_session_path %></li>
+<%end %>
+</ul>
+
+
+
+</div>
+</div>
+
+
+<div class="container">
+
+
+<%if notice %>
+       <p class="notice"><%= notice %></p>
+<%end %>
+<%if alert %>
+       <p class="alert"><%= alert %></p>
+<%end %>
+
+
+<%= yield %>
+</div>
+</body>
+</html>
