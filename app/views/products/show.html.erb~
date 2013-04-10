@@ -7,7 +7,7 @@
 
 <p>
   <b>Type:</b>
-  <%= @product.part_type %>
+  <%= @product.type %>
 </p>
 
 <p>

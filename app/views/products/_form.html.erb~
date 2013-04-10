@@ -38,7 +38,7 @@
   <div class="field">
 <%= f.label :company_id %><br />
 <%= f.collection_select(:company_id, Company.all, :id, :name) %>
-<br />
+<br /><br />
   </div>
   <div class="actions">
     <%= f.submit %>

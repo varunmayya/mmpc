@@ -1,6 +1,6 @@
 <h1>Listing products</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Type</th>
@@ -16,7 +16,7 @@
 <% @products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
-    <td><%= product.type %></td>
+    <td><%= product.part_type %></td>
     <td><%= image_tag(product.img_url) %></td>
     <td><%= product.price %></td>
     <td><%= product.available %></td>
