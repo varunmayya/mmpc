@@ -7,4 +7,20 @@ class Product < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
 
   belongs_to :company
+  has_many :line_items
+  
+  before_destroy :ensure_unreferenced
+  
+
+  private
+def ensure_unreferenced
+if line_items.empty?
+return true
+else
+errors.add(:base, 'Line Items Present')
+return false
+end
+end
+
+
 end

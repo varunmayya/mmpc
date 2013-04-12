@@ -4,7 +4,8 @@ class Product < ActiveRecord::Base
   attr_accessible :available, :img_url, :name, :price, :requires, :part_type , :company_id
 
   validates :img_url, :format => {:with => %r{\.(gif|jpg|png)$}i, :message => "Please ensure that the image extension is correct."}
-  validates :name, :type , :presence => true, :uniqueness => true
+  validates :name, :presence => true, :uniqueness => true
 
   belongs_to :company
+  has_many :line_items
 end

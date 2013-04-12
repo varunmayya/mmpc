@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :part_type %><br />
-    <%= f.text_field :part_type %>
+    <%= f.select :part_type, [['Processor','PROCESSOR'],['Gfx Card','GFXCARD'],['Power Supply Unit','POWERSUPPLY']] %>
   </div>
   <div class="field">
     <%= f.label :img_url %><br />

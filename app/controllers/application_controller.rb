@@ -3,5 +3,19 @@ class ApplicationController < ActionController::Base
 
     rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
-  end
+end
+
+     
+private 
+#Prevents controller from accessing this or actions being called on this lol
+def current_build
+Build.find(session[:build_id])
+rescue ActiveRecord::RecordNotFound
+build = Build.create
+session[:build_id] = build.id
+build
+end
+
+
+
 end
