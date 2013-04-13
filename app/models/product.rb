@@ -22,5 +22,8 @@ return false
 end
 end
 
+  def name_with_price
+    "#{name}  [Rs.#{price}]"
+  end
 
 end

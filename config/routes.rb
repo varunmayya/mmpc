@@ -8,12 +8,12 @@ Makemypc::Application.routes.draw do
   devise_for :users
 
   get "store/index"
-
+  
   resources :companies
-
 
   resources :products
 
+  post "store/submit"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
